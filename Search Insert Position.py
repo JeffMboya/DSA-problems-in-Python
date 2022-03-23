@@ -29,3 +29,8 @@ class Solution:
             else:
                 left = pivot + 1
         return left
+
+    '''
+    Time complexity :O(log N).
+    Space complexity :O(1) 
+    '''
