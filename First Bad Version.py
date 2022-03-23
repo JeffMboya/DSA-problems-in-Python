@@ -17,18 +17,18 @@ It is not difficult to see that this could be solved using a classic algorithm -
 Let us see how the search space could be halved each time below.
 '''
 
-class Solution:
-    def firstBadVersion(self, n: int) -> int:
-        i = 1
-        j = n
-        while (i < j):
-            pivot = (i+j) // 2
-            if (isBadVersion(pivot)):
-                j = pivot       # keep track of the leftmost bad version
-            else:
-                i = pivot + 1   # the one after the rightmost good version
-        return i
 
+def firstBadVersion(self, n: int) -> int:
+    i = 1
+    j = n
+    while (i < j):
+        pivot = i + (j - i) // 2
+        if (isBadVersion(pivot)):
+            j = pivot  # keep track of the leftmost bad version
+        else:
+            i = pivot + 1  # the one after the rightmost good version
+
+    return i
 '''
 Complexity analysis
 Time complexity : O(log n). The search space is halved each time, so the time complexity is O(log n).
