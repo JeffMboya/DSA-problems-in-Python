@@ -8,13 +8,12 @@ def isPalindrome(self, x: int) -> bool:
 	return str(x) == str(x)[::-1]
 
 #SOLUTION 2: REVERSE HALF OF INTEGER
-def isPalindrome(self, x: int) -> bool:
-	if x < 0 or (x > 0 and x%10 == 0):   # if x is negative, return False. if x is positive and last digit is 0, that also cannot form a palindrome, return False.
-		return False
-	
-	result = 0
-	while x > result:
-		result = result * 10 + x % 10
-		x = x // 10
-		
-	return True if (x == result or x == result // 10) else False
+dclass Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 or (x > 0 and x%10 == 0):
+            return False
+        xRev = 0
+        while x > xRev:
+            xRev = xRev * 10 + x % 10
+            x = x // 10
+        return True if (x == xRev or x == xRev // 10) else False
